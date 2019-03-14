@@ -15,6 +15,7 @@ const StyledCabin = styled.div`
     grid-template-rows: repeat(32, 10vw);
   }
 `
+
 const StyledAisle = styled.div`
   grid-column-start: 4;
   grid-row: 1 / 33;
@@ -200,14 +201,12 @@ export default function Cabin() {
   ])
 
   return (
-    <React.Fragment>
-      <StyledCabin>
-        {seats.map(seat => (
-          <Seat name={seat.seatnumber} />
-        ))}
-        <StyledEmpty />
-        <StyledAisle />
-      </StyledCabin>
-    </React.Fragment>
+    <StyledCabin>
+      {seats.map(seat => (
+        <Seat name={seat.seatnumber} />
+      ))}
+      <StyledEmpty />
+      <StyledAisle />
+    </StyledCabin>
   )
 }

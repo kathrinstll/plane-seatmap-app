@@ -10,6 +10,15 @@ const StyledSeat = styled.div`
   justify-content: center;
 `
 
+const StyledXLSeat = styled.div`
+  background-color: cornflowerblue;
+  border-radius: 2vw;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 export default function Seat({ name }) {
   return <StyledSeat>{name}</StyledSeat>
 }
