@@ -7,10 +7,9 @@ const Headline = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: ;
+  height: 100%;
   margin-bottom: 4px;
   background: lightgrey;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
 `
 

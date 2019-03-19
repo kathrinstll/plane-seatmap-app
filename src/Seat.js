@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import MealSelect from './MealSelect'
 
 const StyledSeat = styled.div`
   background-color: darkblue;
@@ -20,5 +21,9 @@ const StyledXLSeat = styled.div`
 `
 
 export default function Seat({ name }) {
-  return <StyledSeat>{name}</StyledSeat>
+  if (name.includes('15') || name.includes('16')) {
+    return <StyledXLSeat>{name}</StyledXLSeat>
+  } else {
+    return <StyledSeat>{name}</StyledSeat>
+  }
 }

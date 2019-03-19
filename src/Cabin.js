@@ -205,6 +205,7 @@ export default function Cabin() {
       {seats.map(seat => (
         <Seat name={seat.seatnumber} />
       ))}
+
       <StyledEmpty />
       <StyledAisle />
     </StyledCabin>

@@ -8,25 +8,36 @@ const Nav = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
+  height: 100%;
+  background: lightgrey;
 `
 
 const NavBarElement = styled.div`
-  background: lightgrey;
-  padding: 5px;
-  border-radius: 2px;
-  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  margin-top: 4px;
 `
-
+const ImgContainer = styled.div`
+  align-items: center;
+  justify-content: center;
+`
 const StyledImg = styled.img`
   height: 53px;
   width: 53px;
+`
+
+const StyledPlane = styled.img`
+  height: 48px;
+  width: 48px;
 `
 
 export default function Footer({ activePageSetter }) {
   return (
     <Nav>
       <NavBarElement onClick={() => activePageSetter('flightinfo')}>
-        <StyledImg src={planeIcon} alt="" />
+        <StyledPlane src={planeIcon} alt="" />
       </NavBarElement>
       <NavBarElement onClick={() => activePageSetter('stockcount')}>
         <StyledImg src={foodIcon} alt="" />

@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 const StyledCard = styled.section`
   display: grid;
-  grid-template-rows: 100px auto auto;
+  grid-template-rows: 100px auto auto auto;
+  grid-template-columns: 2fr 1fr;
   grid-gap: 12px;
   border-radius: 41px;
   border: 1px solid grey;
@@ -15,6 +16,8 @@ const StyledText = styled.p`
   font-size: 16px;
   padding: 8px;
   font-family: Arial, Helvetica, sans-serif;
+  grid-column-start: 1;
+  grid-column-end: 3;
 `
 
 const StyledImage = styled.div`
@@ -24,13 +27,16 @@ const StyledImage = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 40px 40px 0 0;
+  grid-column-start: 1;
+  grid-column-end: 3;
 `
 
-const StyledDishName = styled.h2`
+const StyledDishName = styled.h1`
   font-family: Arial, Helvetica, sans-serif;
   color: cornflowerblue;
   grid-row-start: 2;
   grid-row-end: 3;
+  text-align: center;
 `
 
 const StyledPrizeTag = styled.div`

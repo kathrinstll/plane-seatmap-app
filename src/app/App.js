@@ -5,6 +5,7 @@ import Header from '../Header'
 import MealListPage from '../MealListPage'
 import Footer from '../Footer'
 import FlightInfo from '../FlightInfo'
+import GlobalStyles from './GlobalStyle'
 
 const Grid = styled.div`
   display: grid;
@@ -40,6 +41,7 @@ export default function App() {
   }
   return (
     <Grid>
+      <GlobalStyles />
       <Header activePageTitle={activePage} />
       <ActivePage>
         <ActivePageElement />
