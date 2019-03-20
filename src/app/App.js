@@ -11,18 +11,16 @@ const Grid = styled.div`
   display: grid;
   grid-template-rows: 73px auto 73px;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
 `
 
 const ActivePage = styled.section`
-  display: grid;
-  grid-template-rows: auto;
-  overflow: scroll;
+  overflow-y: scroll;
 `
 
 export default function App() {
-  const [activePage, setActivePage] = useState('stockcount')
+  const [activePage, setActivePage] = useState('seatmap')
   /*let activePageElement
   if (activePage === 'seatmap') {
     activePageElement = <Cabin />
@@ -35,17 +33,16 @@ export default function App() {
       return <Cabin />
     } else if (activePage === 'flightinfo') {
       return <FlightInfo />
-    } else {
+    } else if (activePage === 'stockcount') {
       return <MealListPage />
     }
   }
+
   return (
     <Grid>
       <GlobalStyles />
       <Header activePageTitle={activePage} />
-      <ActivePage>
-        <ActivePageElement />
-      </ActivePage>
+      <ActivePageElement />
       <Footer activePageSetter={setActivePage} />
     </Grid>
   )

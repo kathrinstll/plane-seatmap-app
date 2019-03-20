@@ -34,17 +34,17 @@ export default function Crew(onInputChange) {
   return (
     <GridContainer>
       <StyledCrewMember>Cpt</StyledCrewMember>
-      <StyledInput onChange={onInputChange} key="cpt" label="Cpt" />
+      <StyledInput onChange={onInputChange} label="Cpt" />
       <StyledCrewMember>FO</StyledCrewMember>
-      <StyledInput onChange={onInputChange} key="fo" label="FO" />
+      <StyledInput onChange={onInputChange} label="FO" />
       <StyledCrewMember>SCCM</StyledCrewMember>
-      <StyledInput onChange={onInputChange} key="sccm" label="SCCM" />
+      <StyledInput onChange={onInputChange} label="SCCM" />
       <StyledCrewMember>1R</StyledCrewMember>
-      <StyledInput onChange={onInputChange} key="ccm1R" label="1R" />
+      <StyledInput onChange={onInputChange} label="1R" />
       <StyledCrewMember>3L</StyledCrewMember>
-      <StyledInput onChange={onInputChange} key="ccm3L" label="3L" />
+      <StyledInput onChange={onInputChange} label="3L" />
       <StyledCrewMember>3R</StyledCrewMember>
-      <StyledInput onChange={onInputChange} key="ccm3R" label="3R" />
+      <StyledInput onChange={onInputChange} label="3R" />
       <StyledCrewMember>Additional</StyledCrewMember>
       <StyledInput label="Additional" />
     </GridContainer>

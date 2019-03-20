@@ -20,11 +20,11 @@ export default function Aircraft(onInputChange, aircraft) {
   return (
     <StyledSelectAircraft
       onChange={onInputChange}
-      name="aircraft" //der key im useState auf der FlightInfo
+      key="aircraft" //der key im useState auf der FlightInfo
       value={aircraft} //was auch immer für ein aircraft vom user dann selected wird
     >
       {planes.map(plane => (
-        <option>{plane.aircraftName}</option>
+        <option key={plane.aircraftName}>{plane.aircraftName}</option>
       ))}
     </StyledSelectAircraft>
   )

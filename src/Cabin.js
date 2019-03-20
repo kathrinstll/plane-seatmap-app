@@ -9,6 +9,7 @@ const StyledCabin = styled.div`
   grid-template-rows: repeat(32, 10vw);
   margin: 0 auto;
   font-size: 4vw;
+  overflow-y: scroll;
 
   @media screen and (min-width: 568px) {
     grid-template-columns: repeat(7, 10vw);

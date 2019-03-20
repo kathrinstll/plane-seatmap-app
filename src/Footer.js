@@ -8,8 +8,10 @@ const Nav = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
-  height: 100%;
   background: lightgrey;
+
+  /* position: absolute;
+  z-index: 999; */
 `
 
 const NavBarElement = styled.div`
@@ -18,6 +20,7 @@ const NavBarElement = styled.div`
   justify-content: center;
   margin-bottom: 4px;
   margin-top: 4px;
+  background: red;
 `
 const ImgContainer = styled.div`
   align-items: center;
@@ -35,7 +38,7 @@ const StyledPlane = styled.img`
 
 export default function Footer({ activePageSetter }) {
   return (
-    <Nav>
+    <Nav onClick={() => console.log('footer')}>
       <NavBarElement onClick={() => activePageSetter('flightinfo')}>
         <StyledPlane src={planeIcon} alt="" />
       </NavBarElement>
