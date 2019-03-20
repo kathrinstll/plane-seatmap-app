@@ -30,21 +30,21 @@ const StyledCrewMember = styled.label`
   justify-items: center;
 `
 
-export default function Crew(onInputChange) {
+export default function Crew({ onInputChange }) {
   return (
     <GridContainer>
       <StyledCrewMember>Cpt</StyledCrewMember>
-      <StyledInput onChange={onInputChange} label="Cpt" />
+      <StyledInput onChange={onInputChange} name="cpt" label="Cpt" />
       <StyledCrewMember>FO</StyledCrewMember>
-      <StyledInput onChange={onInputChange} label="FO" />
+      <StyledInput onChange={onInputChange} name="fo" label="FO" />
       <StyledCrewMember>SCCM</StyledCrewMember>
-      <StyledInput onChange={onInputChange} label="SCCM" />
+      <StyledInput onChange={onInputChange} name="sccm" label="SCCM" />
       <StyledCrewMember>1R</StyledCrewMember>
-      <StyledInput onChange={onInputChange} label="1R" />
+      <StyledInput onChange={onInputChange} name="ccm1R" label="1R" />
       <StyledCrewMember>3L</StyledCrewMember>
-      <StyledInput onChange={onInputChange} label="3L" />
+      <StyledInput onChange={onInputChange} name="ccm3L" label="3L" />
       <StyledCrewMember>3R</StyledCrewMember>
-      <StyledInput onChange={onInputChange} label="3R" />
+      <StyledInput onChange={onInputChange} lname="ccm3R" abel="3R" />
       <StyledCrewMember>Additional</StyledCrewMember>
       <StyledInput label="Additional" />
     </GridContainer>

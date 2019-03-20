@@ -204,7 +204,7 @@ export default function Cabin() {
   return (
     <StyledCabin>
       {seats.map(seat => (
-        <Seat name={seat.seatnumber} />
+        <Seat key={seat.seatnumber} name={seat.seatnumber} />
       ))}
 
       <StyledEmpty />

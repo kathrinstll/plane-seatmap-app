@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const StyledSelectAircraft = styled.select``
 
-export default function Aircraft(onInputChange, aircraft) {
+export default function Aircraft({ onInputChange, aircraft }) {
   const [planes, setPlanes] = useState([
     { aircraftName: 'DABKI' },
     { aircraftName: 'DABKM' },
@@ -19,6 +19,7 @@ export default function Aircraft(onInputChange, aircraft) {
 
   return (
     <StyledSelectAircraft
+      name="aircraft"
       onChange={onInputChange}
       key="aircraft" //der key im useState auf der FlightInfo
       value={aircraft} //was auch immer für ein aircraft vom user dann selected wird

@@ -37,9 +37,15 @@ const meals = [
     image: chickencurry,
   },
 ]
+
 const StyledMealList = styled.div`
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  /* grid-template-rows: repeat(4, 25vw); */
+  /* @media screen and (min-width: 568px) {
+    grid-template-rows: repeat(4, 25vw);
+  } */
   /* grid-template-rows: repeat(4, 25vw); */
   /* @media screen and (min-width: 568px) {
     grid-template-rows: repeat(4, 25vw);

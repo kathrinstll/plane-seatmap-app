@@ -43,6 +43,7 @@ export default function App() {
       <GlobalStyles />
       <Header activePageTitle={activePage} />
       <ActivePageElement />
+
       <Footer activePageSetter={setActivePage} />
     </Grid>
   )

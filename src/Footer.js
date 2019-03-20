@@ -20,7 +20,7 @@ const NavBarElement = styled.div`
   justify-content: center;
   margin-bottom: 4px;
   margin-top: 4px;
-  background: red;
+  background: lightgrey;
 `
 const ImgContainer = styled.div`
   align-items: center;

@@ -48,6 +48,19 @@ const StyledPrizeTag = styled.div`
   font-family: Arial, Helvetica, sans-serif;
 `
 
+const StyledStockCountInput = styled.input`
+  border: 3px;
+  border-radius: 50%;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 5;
+  grid-column-end: 6;
+  height: 20px;
+  align-items: center;
+  justify-items: center;
+  border-color: lightgrey;
+`
+
 export default function MealCard({ name, description, prize, image }) {
   return (
     <StyledCard>
@@ -56,6 +69,7 @@ export default function MealCard({ name, description, prize, image }) {
           backgroundImage: 'url(' + image + ')',
         }}
       />
+
       <StyledDishName>{name}</StyledDishName>
       <StyledText>{description}</StyledText>
       <StyledPrizeTag>{prize}</StyledPrizeTag>
