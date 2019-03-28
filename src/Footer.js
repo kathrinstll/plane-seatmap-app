@@ -10,8 +10,8 @@ const Nav = styled.div`
   width: 100%;
   background: lightgrey;
 
-  /* position: absolute;
-  z-index: 999; */
+  left: 0;
+  bottom: 0;
 `
 
 const NavBarElement = styled.div`
@@ -22,10 +22,7 @@ const NavBarElement = styled.div`
   margin-top: 4px;
   background: lightgrey;
 `
-const ImgContainer = styled.div`
-  align-items: center;
-  justify-content: center;
-`
+
 const StyledImg = styled.img`
   height: 53px;
   width: 53px;

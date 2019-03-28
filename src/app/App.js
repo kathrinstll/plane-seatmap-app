@@ -15,24 +15,21 @@ const Grid = styled.div`
   margin: 0 auto;
 `
 
-const ActivePage = styled.section`
-  overflow-y: scroll;
-`
-
 export default function App() {
-  const [activePage, setActivePage] = useState('seatmap')
-  /*let activePageElement
-  if (activePage === 'seatmap') {
-    activePageElement = <Cabin />
-  } else {
-    activePageElement = <MealListPage />
-  }*/
+  const [activePage, setActivePage] = useState('flightinfo')
+
+  const [currentFlightInfo, setCurrentFlightInfo] = useState({})
 
   function ActivePageElement() {
     if (activePage === 'seatmap') {
       return <Cabin />
     } else if (activePage === 'flightinfo') {
-      return <FlightInfo />
+      return (
+        <FlightInfo
+          currentFlightInfo={currentFlightInfo}
+          setCurrentFlightInfo={setCurrentFlightInfo}
+        />
+      )
     } else if (activePage === 'stockcount') {
       return <MealListPage />
     }

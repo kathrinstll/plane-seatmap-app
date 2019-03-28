@@ -25,6 +25,9 @@ const StyledEmpty = styled.div`
   grid-column: 5 / 8;
   grid-row-start: 1;
 `
+const StyledFlightCrew = styled.div``
+
+const StyledCabinCrew = styled.div``
 
 export default function Cabin() {
   const [seats, setSeats] = useState([
@@ -206,7 +209,8 @@ export default function Cabin() {
       {seats.map(seat => (
         <Seat key={seat.seatnumber} name={seat.seatnumber} />
       ))}
-
+      <StyledFlightCrew />
+      <StyledCabinCrew />
       <StyledEmpty />
       <StyledAisle />
     </StyledCabin>

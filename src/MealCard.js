@@ -15,7 +15,6 @@ const StyledText = styled.p`
   grid-row-start: 3;
   font-size: 16px;
   padding: 8px;
-  font-family: Arial, Helvetica, sans-serif;
   grid-column-start: 1;
   grid-column-end: 3;
 `
@@ -32,7 +31,6 @@ const StyledImage = styled.div`
 `
 
 const StyledDishName = styled.h1`
-  font-family: Arial, Helvetica, sans-serif;
   color: cornflowerblue;
   grid-row-start: 2;
   grid-row-end: 3;
@@ -51,13 +49,7 @@ const StyledPrizeTag = styled.div`
 const StyledStockCountInput = styled.input`
   border: 3px;
   border-radius: 50%;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  grid-column-start: 5;
-  grid-column-end: 6;
   height: 20px;
-  align-items: center;
-  justify-items: center;
   border-color: lightgrey;
 `
 
@@ -71,6 +63,7 @@ export default function MealCard({ name, description, prize, image }) {
       />
 
       <StyledDishName>{name}</StyledDishName>
+      <StyledStockCountInput />
       <StyledText>{description}</StyledText>
       <StyledPrizeTag>{prize}</StyledPrizeTag>
     </StyledCard>

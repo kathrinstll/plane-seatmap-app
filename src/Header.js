@@ -8,7 +8,7 @@ const Headline = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-bottom: 4px;
+  margin-bottom: 0 auto;
   background: lightgrey;
   font-size: 20px;
 `

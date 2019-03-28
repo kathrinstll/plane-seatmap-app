@@ -34,11 +34,11 @@ export default createGlobalStyle`
     border: 4px solid #ddd;
     border-radius: none;
     background: white;
-    padding-left: 4px;
+    
   }
 
   button {
-    background: hotpink;
+    background: lightgrey;
     border: none;
     border-radius: 4px;
     color: white;

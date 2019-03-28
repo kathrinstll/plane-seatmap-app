@@ -2,14 +2,48 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Crew from './Crew'
 import Aircraft from './Aircraft'
+import BriefingInfo from './BriefingInfo'
 
 const PageGrid = styled.section`
-  display: grid;
-  align-content: center;
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
 `
+const StyledButtonSave = styled.button`
+  background: lightgrey;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  width: max-content;
+  margin-top: 2%;
+`
+const StyledButtonDelete = styled.button`
+  background: lightgrey;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  width: max-content;
+  margin-top: 2%;
+`
 
-export default function FlightInfo() {
+const StyledForm = styled.form`
+  display: grid;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  width: auto;
+  grid-auto-rows: auto;
+`
+
+export default function FlightInfo({
+  setCurrentFlightInfo,
+  currentFlightInfo,
+}) {
   const [flightInfo, setFlightInfo] = useState({
     aircraft: '',
     cpt: '',
@@ -19,43 +53,62 @@ export default function FlightInfo() {
     ccm3L: '',
     ccm3R: '',
     additional: '',
+    briefinginfo: '',
   })
 
   useEffect(() => {
-    //document.title = 'Hallo'
-    //alert(JSON.stringify(localStorage.getItem('Flightinfo')))
-    let storageData = JSON.parse(localStorage.getItem('Flightinfo'))
+    setFlightInfo(JSON.parse(localStorage.getItem('flightInfo')))
+  }, [])
 
-    //if (storageData !== null) setFlightInfo(storageData)
-  })
-
-  // const [flightInfo, setFlightInfo] = useState(localStorage.getItem(FlightInfo))
+  useEffect(() => {
+    localStorage.setItem(
+      'flightInfo', //name den ich für den local storage vergeben muss, damit der einen key hat für die Daten die er speichert.
+      JSON.stringify(flightInfo)
+    )
+  }, [flightInfo])
 
   function onInputChange(event) {
-    //console.log(event.target.value)
-    //console.log({ ...flightInfo, [event.target.name]: event.target.value })
-
-    //setFlightInfo({ ...flightInfo, [event.target.name]: event.target.value })
-    //setFlightInfo({ hallo: 'welt' })
-
-    console.log(flightInfo)
+    setFlightInfo({ ...flightInfo, [event.target.name]: event.target.value })
   } //alles was vorher drin war, key, value
 
-  function onFormSubmit(event) {
+  function onFormSubmit(event, flightInfo) {
     event.preventDefault()
-    console.log(flightInfo)
-    localStorage.setItem('Flightinfo', JSON.stringify(flightInfo))
+
+    localStorage.setItem(
+      'flightInfo', //name den ich für den local storage vergeben muss, damit der einen key hat für die Daten die er speichert.
+      JSON.stringify(flightInfo)
+    )
   }
+
+  function onFormDelete(event) {
+    event.preventDefault()
+    setFlightInfo({
+      aircraft: '',
+      cpt: '',
+      fo: '',
+      sccm: '',
+      ccm1R: '',
+      ccm3L: '',
+      ccm3R: '',
+      additional: '',
+      briefinginfo: '',
+    })
+  }
+
   return (
     <PageGrid>
-      <form onSubmit={onFormSubmit}>
-        <Aircraft
-          onInputChange={onInputChange}
-          aircraft={flightInfo.aircraft}
+      <StyledForm onSubmit={e => onFormSubmit(e, flightInfo)}>
+        <Aircraft onInputChange={onInputChange} flightInfo={flightInfo} />
+        <Crew
+          onInputChange={e => onInputChange(e, flightInfo)}
+          flightInfo={flightInfo}
         />
-        <Crew onInputChange={onInputChange} aircraft={flightInfo.crewmember} />
-        <button type="submit">Save</button>
-      </form>
+        <BriefingInfo
+          onInputChange={e => onInputChange(e, flightInfo)}
+          flightInfo={flightInfo}
+        />
+        <StyledButtonDelete onClick={onFormDelete}>Delete</StyledButtonDelete>
+      </StyledForm>
     </PageGrid>
   )
 }
